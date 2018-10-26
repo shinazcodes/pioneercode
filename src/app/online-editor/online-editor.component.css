@@ -1,0 +1,13 @@
+.onlineEditor-panel{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.editor {
+    position: fixed;
+    bottom:51px;
+    background-color: grey;
+    right: 0px;
+    left:150px;
+    width: 100%;
+}

@@ -1,0 +1,53 @@
+{
+	"courses" : [
+		{ "courseId": 1, "courseName": "JavaScript", "description": "javascript",
+			"topics": [
+				{ "topicId": 1, "name": "introductionjs", "videoId": "N0lxfilGfak", "videoURL": "",
+					"editor": {"codeId": 1, "src": "console.log('hi')"
+					},
+					"project": { "codeURL": "http://www.github.com"
+					}
+				},
+				{ "topicId": 1, "name": "basic javascript", "videoId": "Z1Yd7upQsXY", "videoURL": "",
+					
+					"editor": {"codeId": 1, "src": "console.log('hi')"
+					},
+					"project": { "codeURL": "http://www.github.com"
+					}
+				},
+				{ "topicId": 1, "name": "more on javascript", "videoId": "N0lxfilGfak", "videoURL": "",
+					"editor": {"codeId": 1, "src": "console.log('javascript advanced')"
+					},
+					"project": { "codeURL": "http://www.github.com"
+					}
+				}
+			]
+		},
+
+
+		{ "courseId": 2, "courseName": "Node JS", "description": "javascript",
+			"topics": [
+				{ "topicId": 1, "name": "introduction", "videoId": "Z1Yd7upQsXY", "videoURL": "",
+					
+					"editor": {"codeId": 1, "src": "console.log('hi')"
+					},
+					"project": { "codeURL": "http://www.github.com"
+					}
+				},
+				{ "topicId": 1, "name": "basics", "videoId": "TkvQPNdGAKc", "videoURL": "",
+				
+					"editor": {"codeId": 1, "src": "console.log('hi')"
+					},
+					"project": { "codeURL": "http://www.github.com"
+					}
+				},
+				{ "topicId": 1, "name": "advanced nodejs", "videoId": "evU3TzbraQM", "videoURL": "",
+					"editor": {"codeId": 1, "src": "console.log('hi')"
+					},
+					"project": { "codeURL": "http://www.github.com"
+					}
+				}
+			]
+		}
+	]
+}

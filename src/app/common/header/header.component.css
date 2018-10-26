@@ -1,0 +1,42 @@
+.header-section{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    left:0px;
+    top: 0PX;
+}
+.navbar{
+    border-radius: 0px;
+}
+.navbar-inverse{
+    background-color: #00304C;
+    border-color: #00304C;
+    color: white;
+    left:0px;
+}
+.nav>li{
+    font-size: 16px;
+}
+.navbar-inverse .navbar-brand{
+    color: white;
+}
+.navbar-inverse .navbar-nav>li>a{
+    color: white;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    background-color: transparent;
+    color: white;
+}
+.navbar-inverse .navbar-brand{
+    width:250px;
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+}
+.navbar-brand>img{
+    width: 40px;
+    display: block;
+    float: left;
+    color: white;
+    margin-right: 10px;
+}

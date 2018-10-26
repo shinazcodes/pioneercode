@@ -1,0 +1,44 @@
+<!-- <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0 pull-left">
+  <div class="leftMenu-panel pull-left">
+    <ul>
+      <li><a href="">Heading 1</a></li>
+      <li><a href="">Heading 2</a></li>
+      <li><a href="">Heading 3</a></li>
+      <li><a href="">Heading 4</a></li>
+      <li><a href="">Heading 5</a></li>
+    </ul>
+  </div>
+</section> -->
+<div class="container">
+  <section class="col-lg-2 col-md-2 col-sm-2 col-xs-2 leftMenu-section p-0 pull-right">
+ <!-- [style.width]="getStyle()" -->
+    <div class="leftMenu-panel pull-left" >
+
+      <ul *ngFor="let course of courses">
+        <div *ngIf="coursename === course.courseName">
+          <li *ngFor="let topics of course.topics; let i = index">
+            <a [routerLink]="['../', coursename, topics.name]" [queryParams]="{watch: topics.videoId, editor: topics.editor.src}"
+              fragment=true>{{topics.name}}</a></li>
+        </div>
+      </ul>
+    </div>
+
+
+    <!-- <div class="player" *ngIf="clicked">
+     <router-outlet></router-outlet>
+    </div> -->
+  </section>
+  <div class="content">
+    <router-outlet></router-outlet>
+
+  </div>
+</div>
+
+<!-- <div  class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p-0 pull-left"> -->
+
+<!-- </div> -->
+<!-- (click)="play()" [routerLink]="['/course','c', dat.courseName]"
+            [queryParams]="{watch: dat.courseName}"  -->
+<!-- <section class class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0 body-section pull-right">
+
+</section>         -->

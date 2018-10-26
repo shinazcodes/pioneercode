@@ -1,0 +1,31 @@
+
+.container{
+    position: fixed; 
+    display: flex;
+    top:50px;
+    left:150px;
+    justify-content: center;    
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    /* background-color:blue; */
+}
+.vid {
+    position: fixed;
+    top:50px;
+    left:150px;
+    right:0px;
+    bottom: 300px;
+    padding:0px;
+}
+.online-edito {
+    height:100%;
+    z-index: 11;
+}
+.download {
+    position: fixed;
+    bottom: 275px;
+    height:20px;
+    right:40px;
+}
+  
