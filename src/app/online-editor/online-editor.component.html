@@ -1,13 +1,53 @@
 <section class="editor">
-    <div class="onlineEditor-panel">
-      <div ace-editor [(text)]="text" style="height:200px;"></div> 
-      <select name="language" [(ngModel)]="selectedLanguage">
-        <option *ngFor='let language of languageList' [ngValue]='language.id' >{{language.name}}</option>
-      </select>
-      <button (click)="submitData(text)">Submit</button>
-      {{onlineCompilerService.codeResult}}</div>
-  </section>
-  <!-- <div class="online-editor">
+    <div class="onlineEditor-panel ">
+        <nav class="navbar navbar-inverse topbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" >code editor</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <select name="language" [(ngModel)]="selectedLanguage" class="drop">
+                            <option *ngFor='let language of languageList' [ngValue]='language.id'>{{language.name}}</option>
+                        </select>
+                        <!-- <select name="language" [(ngModel)]="selectedLanguage" >
+                                <option *ngFor='let language of languageList' [ngValue]='language.id' >{{language.name}}</option>
+                              </select> -->
+                    </li>
+                    <li><a><span class="glyphicon glyphicon-play" (click)="submitData(text, some)">&nbsp;Run</span>
+                        </a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <nav class="navbar">
+            <div class ="container-fluid">
+            <div class= "nav navbar-nav navbar-right">
+        <select name="language" [(ngModel)]="selectedLanguage" class="pull-right">
+            <option *ngFor='let language of languageList' [ngValue]='language.id' >{{language.name}}</option>
+          </select>
+      <button (click)="submitData(text, some)" class="pull-right">Submit</button>
+        </div>
+            </div>
+    </nav> -->
+        <div ace-editor [(text)]="text" style="height:200px;"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p-0 m-0 ">
+            
+            <div class="inputs"><span>input</span></div>
+            <div ace-editor style="height:100px;" [(text)]="some">
+            </div>
+        </div>
+
+        <div class="code">
+
+            <div style="height:100px" class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p-0 m-0 ">
+                <div class="inputs"><span>output</span></div>{{onlineCompilerService.codeResult}}
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- <div class="online-editor">
     <div>
        
     <div ace-editor [(text)]="text" style="height:200px;"></div> 

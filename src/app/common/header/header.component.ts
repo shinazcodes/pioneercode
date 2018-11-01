@@ -9,10 +9,13 @@ import { CoursesItem } from '../../pages/data';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  db;
   courses: CoursesItem[];
   constructor(private router: Router, private route: ActivatedRoute, private http: Http) { }
   ngOnInit() {
-    
+
+    this.db = localStorage.getItem('courseData');
+
     this.http.get('./data/db.json').subscribe(res => {
       // this.data = res.json();
       this.courses = <CoursesItem[]>res.json().courses;

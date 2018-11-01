@@ -40,3 +40,13 @@
     color: white;
     margin-right: 10px;
 }
+
+.content {
+    height : 100%;
+}
+.y {
+    height: 50px;
+}
+.x {
+    height: 100%;
+}

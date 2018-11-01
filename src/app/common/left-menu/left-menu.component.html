@@ -1,4 +1,4 @@
-<!-- <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0 pull-left">
+<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0 pull-left">
   <div class="leftMenu-panel pull-left">
     <ul>
       <li><a href="">Heading 1</a></li>
@@ -8,11 +8,10 @@
       <li><a href="">Heading 5</a></li>
     </ul>
   </div>
-</section> -->
-<div class="container">
-  <section class="col-lg-2 col-md-2 col-sm-2 col-xs-2 leftMenu-section p-0 pull-right">
+</div> -->
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 leftMenu-section p-0 container-fluid">
  <!-- [style.width]="getStyle()" -->
-    <div class="leftMenu-panel pull-left" >
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 leftMenu-panel p-0" >
 
       <ul *ngFor="let course of courses">
         <div *ngIf="coursename === course.courseName">
@@ -27,18 +26,15 @@
     <!-- <div class="player" *ngIf="clicked">
      <router-outlet></router-outlet>
     </div> -->
-  </section>
-  <div class="content">
-    <router-outlet></router-outlet>
-
   </div>
+  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p-0 m-0">
+    <router-outlet></router-outlet>
 </div>
-
 <!-- <div  class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p-0 pull-left"> -->
 
 <!-- </div> -->
 <!-- (click)="play()" [routerLink]="['/course','c', dat.courseName]"
             [queryParams]="{watch: dat.courseName}"  -->
-<!-- <section class class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0 body-section pull-right">
+<!-- <div class class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0 body-div pull-right">
 
-</section>         -->
+</div>         -->

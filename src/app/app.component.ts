@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
     console.log('data ');
     this.http.get('./data/db.json').subscribe(res => {
       this.videos = res.json();
+      localStorage.setItem('courseData', JSON.stringify(res.json()));
     });
     console.log('data  '+ this.videos);
   }

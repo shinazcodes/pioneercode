@@ -14,9 +14,11 @@ import { CoursesItem } from '../pages/data';
 export class OnlineEditorComponent implements OnInit, AfterViewInit {
   @Input()
   courses: CoursesItem[];
+  db;
   @ViewChild('editor') editor;
   constructor(private _http: Http, private onlineCompilerService: OnlineCompilerService, private route: ActivatedRoute){}
   text = 'hello';
+  some ='';
   languageList: any;
   selectedLanguage: any;
   data: any;
@@ -26,6 +28,9 @@ export class OnlineEditorComponent implements OnInit, AfterViewInit {
           this.languageList = result;
       });
       this.route.queryParams.subscribe((queryparams: Params) => { this.text = queryparams['editor']; } );
+      const data = localStorage.getItem('courseData');
+      this.db = JSON.parse(data);
+      this.courses = this.db.courses;
   }
   ngAfterViewInit() {
     console.log('course' +this.courses);
@@ -39,14 +44,15 @@ export class OnlineEditorComponent implements OnInit, AfterViewInit {
               bindKey: 'Ctrl-.',
               exec: function (editor) {
               }
-          })
+          });
       }
-  submitData(text) {
+  submitData(text, some) {
       console.log('langId--->', this.selectedLanguage, text);
        this.data = {
           'language_id': this.selectedLanguage,
-          'source_code': text
-      }
+          'source_code': btoa(text),
+          'stdin': btoa(some)
+      };
       console.log('datat--->', this.data);
       this.onlineCompilerService.SubmitRequest(this.data);
       // console.log("datat--->", data);

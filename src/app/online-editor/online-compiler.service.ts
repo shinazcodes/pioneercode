@@ -17,18 +17,18 @@ export class OnlineCompilerService {
     SubmitRequest(data) {
         const headers = new Headers();
         headers.append('Content-type', 'application/json');
-        this._http.post('https://api.judge0.com/submissions', data, {headers: headers})
+        this._http.post('https://api.judge0.com/submissions?base64_encoded=true&wait=false', data)
         .map(res => res.json())
         .subscribe(result => {
             setTimeout(() => {
                 console.log('code submmit Response ....', result );
-                this._http.get('https://api.judge0.com/submissions/' + result.token)
+                this._http.get('https://api.judge0.com/submissions/' + result.token + '?base64_encoded=true')
                 .map(res => res.json())
                 .subscribe(result => {
                     console.log('code run status>', result);
-                    this.codeResult = result.stdout;
+                    this.codeResult = atob(result.stdout);
                 });
-            }, 9000);
+            }, 5000);
         });
     }
 

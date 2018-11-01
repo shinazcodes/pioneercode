@@ -25,7 +25,7 @@ const routes: Routes = [
   children: [
   { path: ':topics', component: PlayerComponent}
             ] },
-  // { path: '**', redirectTo: 'course'}
+  { path: '**', redirectTo: 'course/JavaScript/introductionjs?watch=N0lxfilGfak&editor=console.log(%27hi%27)#true'}
   // { path: 'java', component: JavaComponent,
   // children: [
   // { path: ':id', component: PlayerComponent}

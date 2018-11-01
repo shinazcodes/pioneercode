@@ -1,13 +1,30 @@
+.editor {
+    margin-bottom: 51px;
+    background-color: rgb(226, 234, 240);
+    width: 100%;
+}
 .onlineEditor-panel{
     position: relative;
+
     display: inline-block;
     width: 100%;
 }
-.editor {
-    position: fixed;
-    bottom:51px;
-    background-color: grey;
-    right: 0px;
-    left:150px;
-    width: 100%;
+.editorhead {
+    display: flex;
+    justify-content: right;
+
+    background-color: red;
+    padding: 5px;
+}
+.topbar {
+    margin-bottom: 0px;
+}
+.drop {
+    margin:15px;
+}
+.inputs {
+    position: relative;
+    padding:10px;
+    background-color: #fff;
+    border: 1px solid;
 }

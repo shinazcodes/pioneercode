@@ -6,6 +6,7 @@
     bottom: 0;
     left:0px;
     width:100%;
+    z-index: 10000;
 }
 .footer-panel{
     position: relative;

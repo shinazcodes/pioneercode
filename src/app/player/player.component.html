@@ -1,27 +1,30 @@
-<div  class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p-0 container">
-<div *ngIf="vid" class="vid">
-    <youtube-player  [videoId]="videoid" (ready)="savePlayer($event)" (change)="onStateChange($event)" height="100%" width="100%">
-    </youtube-player>
-</div>
-<div *ngIf="!vid"  class="vid">
-    <youtube-player  [videoId]="videoid" (ready)="savePlayer($event)" (change)="onStateChange($event)" height="100%" width="100%">
-    </youtube-player>
-</div>
-<section class="download">
-        <div *ngFor = "let course of courses" >    
-    
-                <div *ngFor="let topics of course.topics; let i = index">
-                    <div   *ngIf = "topics.name === topic">
-                    <a href="http://www.github.com">download link</a>
-                </div>
-                    </div>
-                    </div>
-    </section>
-    
-<!-- <section class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p-0 online-edito"> -->
-    <app-online-editor  [courses]="courses"></app-online-editor>
+
+    <div *ngIf="vid" class="vid col-lg-10 col-md-10 col-sm-10 col-xs-10 p-0 m-0">
+        <youtube-player [videoId]="videoid" (ready)="savePlayer($event)" (change)="onStateChange($event)" height="100%"
+            width="100%">
+        </youtube-player>
+    </div>
+    <div *ngIf="!vid" class="vid col-lg-10 col-md-10 col-sm-10 col-xs-10 p-0 m-0">
+        <youtube-player [videoId]="videoid" (ready)="savePlayer($event)" (change)="onStateChange($event)" height="100%"
+            width="100%">
+        </youtube-player>
+    </div>
+    <div *ngFor="let course of courses" class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p-0 m-0" >
+        <div *ngFor="let topics of course.topics; let i = index">
+            <div *ngIf="topics.name === topic">
+                <h1>{{topics.name}}:</h1>
+    <p>{{course.description}}</p>
+
+                <button class="btn btn-primary" href="http://www.github.com">download link</button>
+            </div>
+        </div>
+    </div>
+
+<section class ="vid col-lg-10 col-md-10 col-sm-10 col-xs-10 p-0 m-0 ">
+    <!-- <section class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p-0 online-edito"> -->
+    <app-online-editor [courses]="courses"></app-online-editor>
+</section>
 <!-- </section> -->
-</div>
 <!-- <youtube-player *ngIf = "videos.id === 'java basics'"
 videoId="TkvQPNdGAKc" 
 >

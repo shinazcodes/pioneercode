@@ -1,5 +1,5 @@
 import { Component, OnInit, Renderer2, Output } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Jsonp } from '@angular/http';
 import { GetjsonService } from '../../getjson.service';
 import { CoursesItem, RootObject, TopicsItem } from '../../pages/data';
 import { ActivatedRoute, Params, Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   styleUrls: ['./left-menu.component.css']
 })
 export class LeftMenuComponent implements OnInit {
-  
+  db;
   public courses: CoursesItem[];
   coursename: string;
   clicked= false;
@@ -26,6 +26,9 @@ export class LeftMenuComponent implements OnInit {
         // console.log('TESTING ' + this.courses);
         // console.log('Test', this.courses);
       // this.courses = <CoursesItem[]>res.json().courses;
+      const data = localStorage.getItem('courseData');
+      this.db = JSON.parse(data);
+      this.courses = this.db.courses;
   }
   open() {
     this.clicked=!this.clicked;
