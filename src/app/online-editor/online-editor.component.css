@@ -1,6 +1,6 @@
 .editor {
     margin-bottom: 51px;
-    background-color: rgb(226, 234, 240);
+    background-color: rgb(157, 186, 209);
     width: 100%;
 }
 .onlineEditor-panel{
@@ -12,7 +12,6 @@
 .editorhead {
     display: flex;
     justify-content: right;
-
     background-color: red;
     padding: 5px;
 }
@@ -25,6 +24,6 @@
 .inputs {
     position: relative;
     padding:10px;
-    background-color: #fff;
+    background-color: rgb(179, 168, 168);
     border: 1px solid;
 }

@@ -16,8 +16,8 @@
       <ul *ngFor="let course of courses">
         <div *ngIf="coursename === course.courseName">
           <li *ngFor="let topics of course.topics; let i = index">
-            <a [routerLink]="['../', coursename, topics.name]" [queryParams]="{watch: topics.videoId, editor: topics.editor.src}"
-              fragment=true>{{topics.name}}</a></li>
+            <a [routerLink]="['../', coursename, topics.name]" (click)="storedata(topics.videoId, topics.editor.src)" 
+            >{{topics.name}}</a></li>
         </div>
       </ul>
     </div>

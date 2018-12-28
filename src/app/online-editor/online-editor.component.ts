@@ -6,6 +6,7 @@ import { Http , Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { CoursesItem } from '../pages/data';
+import { GetjsonService } from '../getjson.service';
 @Component({
   selector: 'app-online-editor',
   templateUrl: './online-editor.component.html',
@@ -16,9 +17,11 @@ export class OnlineEditorComponent implements OnInit, AfterViewInit {
   courses: CoursesItem[];
   db;
   @ViewChild('editor') editor;
-  constructor(private _http: Http, private onlineCompilerService: OnlineCompilerService, private route: ActivatedRoute){}
+  constructor(private _http: Http,
+    private getjson: GetjsonService,
+    private onlineCompilerService: OnlineCompilerService, private route: ActivatedRoute){}
   text = 'hello';
-  some ='';
+  some = '';
   languageList: any;
   selectedLanguage: any;
   data: any;
@@ -27,10 +30,11 @@ export class OnlineEditorComponent implements OnInit, AfterViewInit {
           console.log('code run status>', result);
           this.languageList = result;
       });
-      this.route.queryParams.subscribe((queryparams: Params) => { this.text = queryparams['editor']; } );
-      const data = localStorage.getItem('courseData');
-      this.db = JSON.parse(data);
-      this.courses = this.db.courses;
+    //   this.route.queryParams.subscribe((queryparams: Params) => { this.text = queryparams['editor']; } );
+    //   const data = localStorage.getItem('courseData');
+    //   this.db = JSON.parse(data);
+    //   this.courses = this.db.courses;
+      this.text = this.getjson.src;
   }
   ngAfterViewInit() {
     console.log('course' +this.courses);

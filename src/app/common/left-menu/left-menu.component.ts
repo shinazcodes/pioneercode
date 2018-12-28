@@ -13,16 +13,16 @@ export class LeftMenuComponent implements OnInit {
   db;
   public courses: CoursesItem[];
   coursename: string;
-  clicked= false;
+  clicked = false;
 
-  constructor(private getjson: GetjsonService, private http: Http, private route: ActivatedRoute, 
+  constructor(private getjson: GetjsonService, private http: Http, private route: ActivatedRoute,
     private router: Router, private renderer: Renderer2) { }
   async ngOnInit() {
   this.route.params.subscribe((params: Params) => this.coursename = params['id']);
     // this.http.get('./data/db.json').subscribe(res => {
       // this.data = res.json();
-      const res = await this.getjson.getCourseName();
-        this.courses = <CoursesItem[]>res.json().courses;
+      // const res = await this.getjson.getCourseName();
+      //   this.courses = <CoursesItem[]>res.json().courses;
         // console.log('TESTING ' + this.courses);
         // console.log('Test', this.courses);
       // this.courses = <CoursesItem[]>res.json().courses;
@@ -31,8 +31,14 @@ export class LeftMenuComponent implements OnInit {
       this.courses = this.db.courses;
   }
   open() {
-    this.clicked=!this.clicked;
-   
+    this.clicked = !this.clicked;
+}
+storedata(videoid, src) {
+  this.getjson.id = videoid;
+  this.getjson.src = src;
+  console.log('videoid'+this.getjson.src);
+  console.log('id'+this.getjson.id);
+  
 }
 
  } // play(course) {

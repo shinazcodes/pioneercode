@@ -4,9 +4,11 @@
     width: 100%;
     left:0px;
     top: 0PX;
+    height: fit-content;
 }
 .navbar{
     border-radius: 0px;
+    margin-bottom:0px;
 }
 .navbar-inverse{
     background-color: #00304C;

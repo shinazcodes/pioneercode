@@ -9,6 +9,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <select name="language" [(ngModel)]="selectedLanguage" class="drop">
+                            <option [ngValue]="undefined" disabled  selected> Please select a language </option>
                             <option *ngFor='let language of languageList' [ngValue]='language.id'>{{language.name}}</option>
                         </select>
                         <!-- <select name="language" [(ngModel)]="selectedLanguage" >
